@@ -7,6 +7,8 @@ fieldset{border:1px solid #dfe5dd;border-radius:10px;margin:16px 0;padding:12px;
 @media(max-width:600px){.card-payment-row{display:grid;grid-template-columns:auto 1fr;gap:10px}.card-payment-row .row-body{grid-column:1/-1}.card-payment-row .actions{margin-left:0;justify-self:end}.card-payment-row> b{white-space:nowrap}}
 
 /* Each mobile schedule has its own title/amount, details and action rows. */
+.finance-overview .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+.finance-section{margin-top:18px}.snapshot{padding:12px 0;border-top:1px solid #edf0e9}.line>span{min-width:0;overflow-wrap:anywhere}.line small{display:block;letter-spacing:0}.line b{white-space:nowrap;text-align:right}.finance-section summary{cursor:pointer;padding:12px 0;line-height:1.6}.forecast-month summary{display:flex;justify-content:space-between;gap:12px}.forecast-month summary b:last-child{white-space:nowrap}.row-body>small{display:block;letter-spacing:0}.transaction-memo{word-break:keep-all;overflow-wrap:anywhere}.finance-section details{min-width:0}.finance-section .stats{grid-template-columns:1fr}.section-head h2{min-width:0;overflow-wrap:anywhere}.section-head button{flex-shrink:0}
 @media(max-width:600px){
  header{flex-wrap:wrap}header>div{min-width:0}header input{max-width:100%}
  .transaction-row{
@@ -34,8 +36,24 @@ fieldset{border:1px solid #dfe5dd;border-radius:10px;margin:16px 0;padding:12px;
  }
  .transaction-row .tag{display:inline-block;white-space:nowrap}
  .transaction-row .actions{
-  grid-column:1/-1;grid-row:3;margin-left:0;justify-content:flex-end;
+  grid-column:1/-1;grid-row:auto;margin-left:0;justify-content:flex-end;
   gap:8px;flex-wrap:wrap;padding-top:9px;border-top:1px solid #e7ebe2;
  }
  .transaction-row .actions button{min-height:40px;padding:9px 14px}
+ .transaction-row .row-body>small{grid-column:1/-1;grid-row:auto;letter-spacing:0;font-size:11px;line-height:1.7}
+ .card-payment-row{grid-template-columns:minmax(0,1fr) auto;align-items:start}
+ .card-payment-row .row-body{display:contents}
+ .card-payment-row .row-body strong{grid-column:1;grid-row:1;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;word-break:keep-all}
+ .card-payment-row>b{grid-column:2;grid-row:1;text-align:right}
+ .card-payment-row .row-body>span{grid-column:1/-1;grid-row:2}
+ .card-payment-row .actions{grid-column:1/-1;grid-row:3;justify-content:flex-end;justify-self:stretch}
+ .card-payment-row .actions button{min-height:40px}
+ .section-head{flex-wrap:wrap}.line{gap:8px}.line b{font-size:13px}
+ .finance-section .stats{grid-template-columns:1fr}.finance-section .stats .line{grid-column:auto}
+ .finance-overview .stats{grid-template-columns:1fr}
+ .row:not(.transaction-row):not(.card-payment-row){display:grid;grid-template-columns:minmax(0,1fr) auto}
+ .row:not(.transaction-row):not(.card-payment-row)>.icon{display:none}
+ .row:not(.transaction-row):not(.card-payment-row)>.actions{grid-column:1/-1;margin-left:0;justify-content:flex-end}
+ .row:not(.transaction-row):not(.card-payment-row)>b{white-space:nowrap;text-align:right}
+ .field-grid{grid-template-columns:1fr}dialog{padding:18px}nav button{flex:1 1 29%}
 }
