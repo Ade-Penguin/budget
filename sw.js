@@ -1,6 +1,6 @@
 const BASE=new URL('./',self.location.href);
 const CACHE_PREFIX='budget:'+BASE.pathname+':shell-';
-const CACHE=CACHE_PREFIX+'cbaf3bb7cd339d5d';
+const CACHE=CACHE_PREFIX+'4ad3c7cb8db2a281';
 const SHELL=['./','index.html','app.bundle.js','style.css','manifest.webmanifest','icon.svg','icon-192.png','icon-512.png'].map(p=>new URL(p,BASE).href);
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL))));
 // Activate after previous clients close; avoid replacing a running app during edits.
