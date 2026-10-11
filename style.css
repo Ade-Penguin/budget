@@ -5,3 +5,37 @@
 .cloud-panel{margin:22px 0}.cloud-panel h2{margin-bottom:0}.cloud-panel form{max-width:420px}.cloud-panel #auth-error{color:#ae513f}
 fieldset{border:1px solid #dfe5dd;border-radius:10px;margin:16px 0;padding:12px;min-width:0}legend{font-weight:600;padding:0 6px}@media(max-width:600px){nav{flex-wrap:wrap}nav button{flex:1 1 29%}}
 @media(max-width:600px){.card-payment-row{display:grid;grid-template-columns:auto 1fr;gap:10px}.card-payment-row .row-body{grid-column:1/-1}.card-payment-row .actions{margin-left:0;justify-self:end}.card-payment-row> b{white-space:nowrap}}
+
+/* Each mobile schedule has its own title/amount, details and action rows. */
+@media(max-width:600px){
+ header{flex-wrap:wrap}header>div{min-width:0}header input{max-width:100%}
+ .transaction-row{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;
+  align-items:start;column-gap:12px;row-gap:9px;
+  margin:12px 0;padding:14px 12px;
+  border:1px solid #e2e7dd;border-radius:12px;background:#fafbf8;
+  min-width:0;max-width:100%;
+ }
+ .transaction-row:last-child{border:1px solid #e2e7dd;margin-bottom:0}
+ .transaction-row .icon{display:none}
+ .transaction-row .row-body{display:contents}
+ .transaction-row .transaction-name{
+  grid-column:1;grid-row:1;min-width:0;max-width:100%;
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;
+  overflow:hidden;line-height:1.5;word-break:keep-all;overflow-wrap:anywhere;
+ }
+ .transaction-row .row-amount{
+  grid-column:2;grid-row:1;justify-self:end;text-align:right;
+  white-space:nowrap;line-height:1.5;font-variant-numeric:tabular-nums;
+ }
+ .transaction-row .transaction-meta{
+  grid-column:1/-1;grid-row:2;min-width:0;
+  line-height:1.7;word-break:keep-all;overflow-wrap:anywhere;
+ }
+ .transaction-row .tag{display:inline-block;white-space:nowrap}
+ .transaction-row .actions{
+  grid-column:1/-1;grid-row:3;margin-left:0;justify-content:flex-end;
+  gap:8px;flex-wrap:wrap;padding-top:9px;border-top:1px solid #e7ebe2;
+ }
+ .transaction-row .actions button{min-height:40px;padding:9px 14px}
+}
